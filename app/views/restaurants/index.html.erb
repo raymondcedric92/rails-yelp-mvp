@@ -1,0 +1,7 @@
+<div class="container mt-5">
+  <ul class="list-group list-unstyled">
+    <% @restaurants.each do |restaurant| %>  <!-- Début de la boucle -->
+      <li class="list-group-item"><%= restaurant.name %></li>  <!-- Affiche le nom de chaque restaurant -->
+    <% end %>  <!-- Fin de la boucle -->
+  </ul>
+</div>
