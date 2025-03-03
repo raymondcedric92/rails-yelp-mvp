@@ -1,11 +1,15 @@
-<div class="container mt-5">
+<div class="container mt-5"> <!-- Correction ici -->
   <h1><%= @restaurant.name %></h1>  <!-- Affiche le nom du restaurant -->
 
   <p><strong>Adresse:</strong> <%= @restaurant.address %></p>  <!-- Affiche l'adresse -->
   <p><strong>Catégorie:</strong> <%= @restaurant.category %></p>  <!-- Affiche la catégorie -->
   <p><strong>Téléphone:</strong> <%= @restaurant.phone_number %></p>  <!-- Affiche le numéro de téléphone -->
 
-  <%= link_to 'Retour à la liste des restaurants', restaurants_path, class: "btn btn-primary" %>  <!-- Bouton pour revenir à la liste -->
-</div>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :rating %>
+    <%= f.input :content %>
+    <%= f.submit "Créer", class: "btn btn-primary" %>
+  <% end %>
 
-
+  <%= link_to 'Retour à la liste des restaurants', restaurants_path, class: "btn btn-primary" %>
+</div> <!-- Fermeture correcte de la balise div -->

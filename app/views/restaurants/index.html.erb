@@ -1,7 +1,9 @@
 <div class="container mt-5">
   <ul class="list-group list-unstyled">
     <% @restaurants.each do |restaurant| %>  <!-- Début de la boucle -->
-      <li class="list-group-item"><%= restaurant.name %></li>  <!-- Affiche le nom de chaque restaurant -->
+      <li class="list-group-item"><%= restaurant.name %>
+      </li>  <!-- Affiche le nom de chaque restaurant -->
+      <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary" %>
     <% end %>  <!-- Fin de la boucle -->
   </ul>
 </div>
